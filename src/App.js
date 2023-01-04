@@ -4,6 +4,7 @@ import "./normalize.css";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import Shop from "./components/Shop";
+import Cart from "./components/Cart";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/Shop" element={<Shop />} />
+        <Route path="/Shop/Cart" element={<Cart />} />
       </Routes>
     </div>
   );

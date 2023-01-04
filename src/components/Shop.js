@@ -1,17 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from "../data";
 import Card from "./Card";
 import cartIcon from "../images/shopping-basket.svg";
+import { Link } from "react-router-dom";
 
 export default function Shop() {
+  const [searchVal, setSearchVal] = useState("");
+  const [storedData, setStoredData] = useState({ ...data });
+
+  const onInput = (e) => {
+    setSearchVal(e.target.value);
+  };
+
+  const addItem = (e) => {
+    const idNum = e.target.id;
+    setStoredData((prev) => {
+      return {
+        ...prev,
+        [idNum]: {
+          ...prev[idNum],
+          units: prev[idNum].units + 1,
+        },
+      };
+    });
+  };
+
+  useEffect(() => {
+    console.log(storedData);
+  }, [storedData]);
+
   const cards = data.map((item) => {
     return (
       <Card
         key={item.id}
+        id={item.id}
         img={item.picture}
         title={item.title}
         price={item.price}
-        units={item.units}
+        classType="Card"
+        add={addItem}
+      />
+    );
+  });
+
+  const searchCards = data.map((item) => {
+    return item.title.includes(searchVal) ? (
+      <Card
+        key={item.id}
+        id={item.id}
+        img={item.picture}
+        title={item.title}
+        price={item.price}
+        classType="Card"
+        add={addItem}
+      />
+    ) : (
+      <Card
+        key={item.id}
+        id={item.id}
+        img={item.picture}
+        title={item.title}
+        price={item.price}
+        classType="Hide"
+        add={addItem}
       />
     );
   });
@@ -19,16 +70,16 @@ export default function Shop() {
   return (
     <div className="Shop">
       <div className="search-cart">
-        <input className="search-bar" type="text"></input>
-        <button className="cart-btn">
+        <input onChange={onInput} className="search-bar" type="text"></input>
+        <Link className="cart-btn" to="./Cart">
           <img
             className="cart-icon"
             src={cartIcon}
             alt="icon of square shopping basket"
           ></img>
-        </button>
+        </Link>
       </div>
-      <div className="items">{cards}</div>
+      <div className="items">{searchVal.length > 0 ? searchCards : cards}</div>
     </div>
   );
 }
