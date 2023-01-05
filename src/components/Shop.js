@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Shop() {
   const [searchVal, setSearchVal] = useState("");
-  const [storedData, setStoredData] = useState({ ...data });
+  const [storedData, setStoredData] = useState({ data });
 
   const onInput = (e) => {
     setSearchVal(e.target.value);
@@ -15,19 +15,27 @@ export default function Shop() {
   const addItem = (e) => {
     const idNum = e.target.id;
     setStoredData((prev) => {
+      const unit = prev.data[idNum].units;
       return {
         ...prev,
-        [idNum]: {
-          ...prev[idNum],
-          units: prev[idNum].units + 1,
+        data: {
+          ...data,
+          [idNum]: {
+            ...data[idNum],
+            units: unit + 1,
+          },
         },
       };
     });
+    localStorage.setItem("data", JSON.stringify(storedData));
   };
 
   useEffect(() => {
-    console.log(storedData);
-  }, [storedData]);
+    const jsonData = localStorage.getItem("data");
+    if (jsonData !== null) {
+      setStoredData(JSON.parse(jsonData));
+    }
+  }, []);
 
   const cards = data.map((item) => {
     return (
