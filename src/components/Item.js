@@ -37,30 +37,31 @@ export default function Item({ title, price, id, change, units }) {
         <p className="title">{title}</p>
         <p className="price">${price}</p>
       </div>
-
-      <div className="counter">
-        <button className="btn-subtract" id={id}>
-          -
-        </button>
-        <input
-          type="number"
-          className="input-counter"
-          value={units}
-          readOnly
-          max="5"
-          min="1"
-          step="1"
-        ></input>
-        <button className="btn-add" id={id}>
-          +
-        </button>
+      <div className="counter-clear">
+        <div className="counter">
+          <button className="btn-subtract" id={id}>
+            -
+          </button>
+          <input
+            type="number"
+            className="input-counter"
+            value={units}
+            readOnly
+            max="5"
+            min="1"
+            step="1"
+          ></input>
+          <button className="btn-add" id={id}>
+            +
+          </button>
+        </div>
+        <img
+          className="trash-icon"
+          src={trashCan}
+          alt="A small trash can icon"
+          id={id}
+        ></img>
       </div>
-      <img
-        className="trash-icon"
-        src={trashCan}
-        alt="A small trash can icon"
-        id={id}
-      ></img>
     </div>
   );
 }
