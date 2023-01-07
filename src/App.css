@@ -11,6 +11,8 @@
   --card-img-height: 300px;
   --add-width: 65px;
   --add-height: 25px;
+  --cart-counter-size: 15px;
+  --cart-size: 30px;
 }
 
 *,
@@ -177,15 +179,16 @@ a:visited {
 
 .search-cart {
   width: 100%;
-  height: auto;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 25px;
+  margin-top: 20px;
   opacity: 0;
   transform: translateX(5rem);
   animation: fadeInSides var(--animation-speed) ease forwards;
+  background-color: var(--white-color);
 }
 
 .search-bar {
@@ -199,13 +202,33 @@ a:visited {
 }
 
 .cart-btn {
-  width: 30px;
-  height: 30px;
+  width: var(--cart-size);
+  height: var(--cart-size);
   position: absolute;
   right: 21px;
   padding: 0px;
   background-color: transparent;
   border: 0px solid transparent;
+}
+
+.cart-counter {
+  width: var(--cart-counter-size);
+  height: var(--cart-counter-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid transparent;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  right: calc(var(--cart-size) - 13px);
+  bottom: -5px;
+}
+
+.cart-counter-text {
+  font-size: 0.7em;
+  margin: 0;
+  color: white;
 }
 
 .cart-icon {
@@ -224,7 +247,7 @@ a:visited {
   grid-template-rows: 1fr 1fr;
   grid-row: auto;
   padding: 0px 30px;
-  margin: 35px 0px;
+  margin: 30px 0px;
   gap: 35px;
 }
 
@@ -241,10 +264,6 @@ a:visited {
 
 .Hide {
   display: none;
-}
-
-.Card:hover {
-  scale: 1.1;
 }
 
 .title-price {
@@ -269,10 +288,6 @@ a:visited {
   box-shadow: -7px 7px 6px rgba(0, 0, 0, 0.5);
 }
 
-.Card:hover > .card-img {
-  box-shadow: -15px 15px 10px rgba(0, 0, 0, 0.5);
-}
-
 .add-btn {
   width: var(--add-width);
   height: var(--add-height);
@@ -284,6 +299,7 @@ a:visited {
   position: absolute;
   left: calc((var(--card-img-width) / 2) - (var(--add-width) / 2));
   bottom: 10px;
+  cursor: pointer;
 }
 
 @keyframes typewritter {
@@ -321,11 +337,132 @@ a:visited {
   align-items: center;
   flex-direction: column;
   font-family: "Inter", sans-serif;
-  padding: 0px 20px;
+  padding: 0px var(--padding-nav);
+  background-color: var(--white-color);
 }
 
 .cart-title {
   align-self: flex-start;
   font-weight: 500;
   margin: 20px 0px;
+}
+
+.all-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px 0px;
+  gap: 25px;
+}
+
+/* Item */
+
+.Item {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.item-title-price {
+  width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  font-size: 1em;
+}
+
+.counter {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.btn-add,
+.btn-subtract,
+.input-counter {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+  background-color: black;
+  color: white;
+  border: 0px solid transparent;
+  transition: ease-in-out 190ms;
+}
+
+.btn-add {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.btn-subtract {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.btn-add:active,
+.btn-subtract:active {
+  background-color: var(--white-color);
+  color: black;
+  border: 2px solid black;
+}
+
+.trash-icon {
+  width: 15px;
+}
+
+/* purchase section */
+
+.purchase-area {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  gap: 30px;
+  padding: 0px var(--padding-nav);
+}
+
+.total-display {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text-total,
+.total-price {
+  margin: 5px;
+  font-size: 1.1em;
+}
+
+.purchase-area > a,
+.purchase-area > a:visited {
+  color: white;
+}
+
+.btn-checkout {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  background-color: black;
+  border: 0px solid transparent;
+  border-radius: 10px;
 }

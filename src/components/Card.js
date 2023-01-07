@@ -8,7 +8,7 @@ export default function Card({ img, title, price, classType, add, id }) {
     <div className={classType}>
       <div className="title-price">
         <p className="title">{title}</p>
-        <p className="price">{price}</p>
+        <p className="price">${price}</p>
       </div>
       <img src={require(`../images/${img}`)} className="card-img"></img>
       <button id={id} className="add-btn" onClick={add}>
