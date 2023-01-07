@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/shopping-cart-top/static/css/main.8bfd7448.css",
+    "main.js": "/shopping-cart-top/static/js/main.47ccf207.js",
+    "static/media/arthur-edelmans-Jr_cb6kPUxM-unsplash.jpg": "/shopping-cart-top/static/media/arthur-edelmans-Jr_cb6kPUxM-unsplash.fdcf11f9261c38f64ee1.jpg",
+    "static/media/kenzie-kraft-9QW52RyBLao-unsplash.jpg": "/shopping-cart-top/static/media/kenzie-kraft-9QW52RyBLao-unsplash.e94ce70a4e09a8612158.jpg",
+    "static/media/rayan-mill-Apj_1ge5OfY-unsplash.jpg": "/shopping-cart-top/static/media/rayan-mill-Apj_1ge5OfY-unsplash.345080bdc2d00879aa73.jpg",
+    "static/media/austin-wade-d2s8NQ6WD24-unsplash.jpg": "/shopping-cart-top/static/media/austin-wade-d2s8NQ6WD24-unsplash.d3967a6f18415dffd746.jpg",
+    "static/media/rayan-mill-OjdQ3tjOtrM-unsplash.jpg": "/shopping-cart-top/static/media/rayan-mill-OjdQ3tjOtrM-unsplash.34ddc9543313422efac3.jpg",
+    "static/media/oladimeji-unsplash1.jpg": "/shopping-cart-top/static/media/oladimeji-unsplash1.32cd160ff7bdd1f194a1.jpg",
+    "static/media/rayan-mill-EvxwJ6ls2vc-unsplash.jpg": "/shopping-cart-top/static/media/rayan-mill-EvxwJ6ls2vc-unsplash.1ce033e004959d6d7eb4.jpg",
+    "static/media/trash-can.svg": "/shopping-cart-top/static/media/trash-can.fe0803f3ddde5202e111e6d0acdae5df.svg",
+    "static/media/shopping-basket.svg": "/shopping-cart-top/static/media/shopping-basket.3d12c2089a57fe595f47046f8f731609.svg",
+    "index.html": "/shopping-cart-top/index.html",
+    "main.8bfd7448.css.map": "/shopping-cart-top/static/css/main.8bfd7448.css.map",
+    "main.47ccf207.js.map": "/shopping-cart-top/static/js/main.47ccf207.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bfd7448.css",
+    "static/js/main.47ccf207.js"
+  ]
+}
