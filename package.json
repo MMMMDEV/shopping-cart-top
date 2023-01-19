@@ -1,8 +1,8 @@
 {
   "name": "shopping-cart-top",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://MMMMDEV.github.io/",
+  "private": false,
+  "homepage": "https://MMMMDEV.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
